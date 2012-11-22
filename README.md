@@ -44,6 +44,9 @@ Example backbonebuilder grunt file config entry:
 
 ## Release History
 
+### 0.1.2
++ Fixed filename reference in package.json
+
 ### 0.1.1
 + Include definition is now case insensitive
 

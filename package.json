@@ -1,7 +1,7 @@
 {
   "name": "grunt-backbonebuilder",
   "description": "Backbone custom builds builder",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/asciidisco/grunt-backbonebuilder",
   "author": {
     "name": "asciidisco",
