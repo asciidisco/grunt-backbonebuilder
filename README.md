@@ -16,7 +16,7 @@ grunt.loadNpmTasks('grunt-backbonebuilder');
 ### Resources
 
 + [grunt](https://github.com/cowboy/grunt)
-+ [getting started](https://github.com/cowboy/grunt/blob/master/docs/getting_started.md)
++ [getting-started](https://github.com/cowboy/grunt/blob/master/docs/getting_started.md)
 + [backbone.js](http://backbonejs.org)
 
 ## Documentation
