@@ -2,6 +2,8 @@
 
 Build your custom backbone experience with grunt.
 
+Note: This is heavily inspired by Greg Frankos Backbone custom builder: http://gregfranko.com/backbone/customBuild/
+
 [![Build Status](https://secure.travis-ci.org/asciidisco/grunt-backbonebuilder.png?branch=master)](http://travis-ci.org/asciidisco/grunt-backbonebuilder)
 
 ## Getting Started
