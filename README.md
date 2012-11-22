@@ -5,7 +5,7 @@ Build your custom backbone experience with grunt.
 [![Build Status](https://secure.travis-ci.org/asciidisco/grunt-backbonebuilder.png?branch=master)](http://travis-ci.org/asciidisco/grunt-backbonebuilder)
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-backbonebuilder`
+Install this grunt plugin next to your project's gruntfile with: `npm install grunt-backbonebuilder`
 
 Then add this line to your project's `grunt.js` gruntfile.
 
