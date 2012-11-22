@@ -2,7 +2,7 @@
 
 Build your custom backbone experience with grunt.
 
-[![Build Status](https://secure.travis-ci.org/asciidisco/grunt-jquerybuilder.png?branch=master)](http://travis-ci.org/asciidisco/grunt-jquerybuilder)
+[![Build Status](https://secure.travis-ci.org/asciidisco/grunt-backbonebuilder.png?branch=master)](http://travis-ci.org/asciidisco/grunt-backbonebuilder)
 
 ## Getting Started
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-backbonebuilder`
@@ -34,12 +34,11 @@ Example backbonebuilder grunt file config entry:
       // output location (relative to your grunt.js file location)
       dest: 'build/backbone.custom.js',
       // if you want to use a different backbone version than the build in one (0.9.2)
-      // then just a reference to your UNMINIFIED backbone version
+      // then just add a reference to your own UNMINIFIED backbone version
       src: 'vendor/mySpecialBackboneVersion.js'
     },
 // ... even more grunt file contents
 ```
-
 
 ## Release History
 
