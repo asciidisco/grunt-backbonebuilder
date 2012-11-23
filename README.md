@@ -28,7 +28,6 @@ configuration to your grunt file:
 Example backbonebuilder grunt file config entry:
 
 ```javascript
-// ... grunt file contents
     backbone: {
       // the parts you want to include in your build
       // possible values ['Model', 'Collection', 'View', 'Events', 'Router']
@@ -38,20 +37,12 @@ Example backbonebuilder grunt file config entry:
       // if you want to use a different backbone version than the build in one (0.9.2)
       // then just add a reference to your own UNMINIFIED backbone version
       src: 'vendor/mySpecialBackboneVersion.js'
-    },
-// ... even more grunt file contents
+    }
 ```
 
 ## Release History
+Take a look at the [Changelog](https://github.com/asciidisco/grunt-backbonebuilder/CHANGELOG)
 
-### 0.1.2
-+ Fixed filename reference in package.json
-
-### 0.1.1
-+ Include definition is now case insensitive
-
-### 0.1.0
-+ Initial Release
 
 ## License
 Copyright (c) 2012 asciidisco

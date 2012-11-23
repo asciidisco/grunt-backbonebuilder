@@ -1,2 +1,6 @@
-/node_modules/
-.DS_Store
+.npmignore
+.editorconfig
+.gitattributes
+.travis.yml
+test
+Grunfile.js
