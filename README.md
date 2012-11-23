@@ -50,7 +50,7 @@ This option allows you to chose a different Backbone source file, if it´s not s
 
 ##FAQ
 
-**How do you ensure that a custom build worksa as expected?**
+**How do you ensure that a custom build works as expected?**
 
 When a new version of this plugin is build, I run a couple of custom builds
 (that will be automazically created for the test run) against Backones testsuite.
