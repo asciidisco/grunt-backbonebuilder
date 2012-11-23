@@ -11,5 +11,6 @@ after_script:
   - "rm .git/index"
   - "git clean -fdx"
   - "git checkout gh-pages"
-  - git push origin gh-pages token=$GITHUB_TOKEN
+  - "git config --global github.upload-script-token $GITHUB_TOKEN"
+  - "git push origin gh-pages"
 secure: "dh+IZF1/LHUVoQ5ZRtZN7hMdHz3Z8IB+SZtS5MVTVuUSv/ftF8xh1Mi4BLLU\nHN3xLn84xiJPc/ezwkF8sNJPuCMr1LfxCUdXkRoXdvCdaCnP9fn/HMHO45P3\nMuUyxFgpYJ0o5pM5ygkqQs7buskoGD1zQYXdt0hzREeGsCds0g0="
