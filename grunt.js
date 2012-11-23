@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         url: '<%= pkg.repository.url %>',
         options: {
           paths: ['lib', 'tasks'],
-          outdir: 'temp/docs/yui/<%= pkg.version %>'
+          outdir: 'gh-pages/docs/yui/<%= pkg.version %>'
         }
       }
     },
