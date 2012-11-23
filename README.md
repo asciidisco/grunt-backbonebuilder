@@ -48,6 +48,34 @@ This option allows you to chose a different Backbone source file, if it´s not s
     }
 ```
 
+##FAQ
+
+**How do you ensure that a custom build worksa as expected?**
+
+When a new version of this plugin is build, I run a couple of custom builds
+(that will be automazically created for the test run) against Backones testsuite.
+The build only passes, if all Backbone unit tests pass.
+
+**Why doesn't Backbone allow you to do custom builds by default?**
+
+Good question. The Backbone Core Dev Team doesn´t want to introduce a higher level of complexity.
+I have different opinion, so I created this project.
+
+**What happens when Backbone upgrades to a different version?**
+
+Normally nothing, the builder is version agnostic & if a new version shows up, the builder should continue working as expect.
+
+**Why This Project Was Created**
+
+I wanted to make it easier for people to only take what they want/need.
+You should read Greg Frankos article [Backbone.js: Convincing the Boss Guide](http://gregfranko.com/blog/backbone-dot-js-convincing-the-boss-guide/) he has some good points and explains them in detail.
+
+**Why (or when) should I use custom builds**
+
+Backbone.js Custom Builds allow you to individually download only the Backbone.js modules that your project needs (the only required module is the **Events** module).
+With custom builds, you could use the Backbone Events class object as a standalone pub/sub solution, or only use Backbone Views to organize all of your app's event handlers, or use Backbone Models to store all of your applications data client-side, etc (all while minimizing your file size).  The possibilities are endless! (not really but you get the point)
+
+
 ### Resources
 
 + [grunt](https://github.com/cowboy/grunt)
