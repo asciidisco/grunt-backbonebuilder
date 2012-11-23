@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/asciidisco/grunt-backbonebuilder"
+    "url": "https://github.com/asciidisco/grunt-backbonebuilder"
   },
   "bugs": {
     "url": "https://github.com/asciidisco/grunt-backbonebuilder/issues"
@@ -33,6 +33,10 @@
   "dependencies": {
     "grunt": "0.3.x",
     "backbone": "0.9.x"
+  },
+  "devDependencies": {
+    "grunt-contrib-yuidoc": "0.3.x",
+    "grunt-bump": "0.0.x"
   },
   "keywords": [
     "gruntplugin", "backbone", "custom", "browser"

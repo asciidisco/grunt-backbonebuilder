@@ -1,9 +1,11 @@
 'use strict';
 
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
   // Project configuration.
   grunt.initConfig({
+    pkg: '<json:package.json>',
 
     test: {
       files: ['test/**/*.js']
@@ -29,6 +31,19 @@ module.exports = function(grunt) {
         'test/backbonetestsuite/test_sync.html',
         'test/backbonetestsuite/test_noconflict.html',
       ]
+    },
+
+    yuidoc: {
+      compile: {
+        name: '<%= pkg.name %>',
+        description: '<%= pkg.description %>',
+        version: '<%= pkg.version %>',
+        url: '<%= pkg.repository.url %>',
+        options: {
+          paths: ['lib', 'tasks'],
+          outdir: 'temp/docs/yui/<%= pkg.version %>'
+        }
+      }
     },
 
     jshint: {
@@ -97,5 +112,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'setUp lint test qunit tearDown');
 
   // Default task.
-  grunt.registerTask('travis', 'setUp lint test qunit tearDown');
+  grunt.registerTask('travis', 'setUp lint test qunit tearDown yuidoc');
 };

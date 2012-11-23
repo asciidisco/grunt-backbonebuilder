@@ -2,5 +2,9 @@ language: node_js
 node_js:
   - 0.8
 before_script:
+  - "git clone https://github.com/asciidisco/grunt-backbonebuilder.git gh-pages"
   - "export DISPLAY=:99.0"
   - "npm install"
+after_script:
+  - "cd gh-pages && ls -la"
+secure: "dh+IZF1/LHUVoQ5ZRtZN7hMdHz3Z8IB+SZtS5MVTVuUSv/ftF8xh1Mi4BLLU\nHN3xLn84xiJPc/ezwkF8sNJPuCMr1LfxCUdXkRoXdvCdaCnP9fn/HMHO45P3\nMuUyxFgpYJ0o5pM5ygkqQs7buskoGD1zQYXdt0hzREeGsCds0g0="
