@@ -4,31 +4,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
-    meta: {
-      banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n' +
-        '------------------------------\n' +
-        'Build @ <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        'Documentation and Full License Available at:\n' +
-        '<%= pkg.homepage %>\n' +
-        '<%= pkg.repository.url %>\n' +
-        'Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n\n' +
-        'Permission is hereby granted, free of charge, to any person obtaining a\n' +
-        'copy of this software and associated documentation files (the "Software"),\n' +
-        'to deal in the Software without restriction, including without limitation\n' +
-        'the rights to use, copy, modify, merge, publish, distribute, sublicense,\n' +
-        'and/or sell copies of the Software, and to permit persons to whom the\n\n' +
-        'Software is furnished to do so, subject to the following conditions:\n' +
-        'The above copyright notice and this permission notice shall be included in\n' +
-        'all copies or substantial portions of the Software.\n\n' +
-        'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,\n' +
-        'EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n' +
-        'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n' +
-        'IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\n' +
-        'DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\n' +
-        'ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\n' +
-        'IN THE SOFTWARE.*/'
-    },
 
     test: {
       files: ['test/**/*.js']
@@ -43,28 +18,84 @@ module.exports = function(grunt) {
       tasks: 'default'
     },
 
+    qunit: {
+      files: [
+        'test/backbonetestsuite/test_view.html',
+        'test/backbonetestsuite/test_model.html',
+        'test/backbonetestsuite/test_collection.html',
+        'test/backbonetestsuite/test_events.html',
+        'test/backbonetestsuite/test_router.html',
+        'test/backbonetestsuite/test_setdomlibrary.html',
+        'test/backbonetestsuite/test_sync.html',
+        'test/backbonetestsuite/test_noconflict.html',
+      ]
+    },
+
     jshint: {
       options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true,
-        node: true,
-        es5: true
+        "curly": true,
+        "eqeqeq": true,
+        "immed": true,
+        "latedef": true,
+        "newcap": true,
+        "noarg": true,
+        "sub": true,
+        "undef": true,
+        "boss": true,
+        "eqnull": true,
+        "node": true,
+        "es5": true
       },
-      globals: {}
+      globals: {
+        "exports": true,
+        "require": true,
+        "module": true
+      }
     }
+
+  });
+
+  // Helper tasks, used to create various custtom builds to test against
+  var combinations = [['View'], ['Model'], ['Events'], ['Collection'], ['Router']];
+  grunt.registerTask('setUp', function () {
+    var done = this.async();
+    var builder = require(__dirname + '/lib/builder').init(grunt);
+    var steps = combinations.length;
+    var stepsDone = 0;
+    var checkDone = function () {
+      if (steps === stepsDone) {
+        done();
+      }
+    };
+
+    // build test fixtures
+    combinations.forEach(function (part) {
+      builder.build({
+        config: {include: part}
+      }, function (transport) {
+        grunt.log.writeln('Prepared custom ' + part.join(',') + ' fixture');
+        grunt.file.write(__dirname + '/fixtures/backbone.custom.' + part.join('.') + '.js', transport.content);
+        stepsDone++;
+        checkDone();
+      });
+    });
+
+  });
+
+  grunt.registerTask('tearDown', function () {
+    var fs = require('fs');
+    // delete test fixtures
+    combinations.forEach(function (part) {
+      grunt.log.writeln('Deleting fixture backbone.custom.' + part.join('.') + '.js');
+      fs.unlinkSync(__dirname + '/fixtures/backbone.custom.' + part.join('.') + '.js');
+    });
+
+    fs.rmdirSync(__dirname + '/fixtures');
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint test');
+  grunt.registerTask('default', 'setUp lint test qunit tearDown');
 
   // Default task.
-  grunt.registerTask('travis', 'lint test');
+  grunt.registerTask('travis', 'setUp lint test qunit tearDown');
 };

@@ -1,5 +1,3 @@
-/*global require: true */
-
 /*
  * grunt-backbonebuilder
  * https://github.com/asciidisco/grunt-backbonebuilder
