@@ -46,6 +46,14 @@ module.exports = function(grunt) {
       }
     },
 
+    compress: {
+      zip: {
+        files: {
+          "test.zip": "lib"
+        }
+      }
+    },
+
     jshint: {
       options: {
         "curly": true,
@@ -112,5 +120,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'setUp lint test qunit tearDown');
 
   // Default task.
-  grunt.registerTask('travis', 'setUp lint test qunit tearDown yuidoc');
+  grunt.registerTask('travis', 'setUp lint test qunit tearDown yuidoc compress');
 };
