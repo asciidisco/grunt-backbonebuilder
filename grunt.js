@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-yuidoc');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Project configuration.
   grunt.initConfig({
