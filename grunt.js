@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     compress: {
       zip: {
         files: {
-          "test.zip": "lib"
+          "test.zip": "./lib/*"
         }
       }
     },
