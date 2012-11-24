@@ -6,4 +6,4 @@ before_script:
   - "npm install"
   - "chmod 0775 ./vendor/ghup/github-upload.rb"
 after_script:
-  - ./vendor/ghup/github-upload.rb grunt.js asciidisco/grunt-backbonebuilder -t $GITHUB_TOKEN
+  - ./vendor/ghup/github-upload.rb CHANGELOG asciidisco/grunt-backbonebuilder -t $GITHUB_TOKEN
