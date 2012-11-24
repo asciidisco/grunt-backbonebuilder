@@ -1,0 +1,3 @@
+[submodule "vendor/ghup"]
+	path = vendor/ghup
+	url = git@github.com:wereHamster/ghup.git
