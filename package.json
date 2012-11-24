@@ -37,7 +37,7 @@
   "devDependencies": {
     "grunt-contrib-yuidoc": "0.3.x",
     "grunt-bump": "0.0.x",
-    "grunt-contrib-compress": "0.0.x"
+    "grunt-contrib-compress": "0.3.x"
   },
   "keywords": [
     "gruntplugin", "backbone", "custom", "browser"
