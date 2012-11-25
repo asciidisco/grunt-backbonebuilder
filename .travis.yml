@@ -4,6 +4,3 @@ secure: "dh+IZF1/LHUVoQ5ZRtZN7hMdHz3Z8IB+SZtS5MVTVuUSv/ftF8xh1Mi4BLLU\nHN3xLn84x
 before_script:
   - "export DISPLAY=:99.0"
   - "npm install"
-  - "chmod 0775 ./vendor/ghup/github-upload.rb"
-after_script:
-  - ./vendor/ghup/github-upload.rb test.zip asciidisco/grunt-backbonebuilder -t $GITHUB_TOKEN
