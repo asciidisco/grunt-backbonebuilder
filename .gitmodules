@@ -1,3 +1,0 @@
-[submodule "vendor/ghup"]
-	path = vendor/ghup
-	url = https://github.com/wereHamster/ghup.git
